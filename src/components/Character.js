@@ -5,7 +5,9 @@ const Character=({characterProps}) => {
     
     return(
         <>
-            <img src={characterProps.image} alt="Character"/>
+                <p>{characterProps.name}</p>
+                <img src={characterProps.image} alt="Character"/>
+
         </>
     )
 }

@@ -3,17 +3,16 @@ import Character from "./Character";
 
 const CharacterList=({characters}) => {
 
-    const characterItems = characters.map((characterProps) => {
+    const characterItems = characters.map((characterProps,index) => {
         return (
-        <Character characterProps={characterProps}/>
+        <Character characterProps={characterProps} key={index}/>
         )
     })
 
     return(
         <>
-            <ul>
+
                 {characterItems}
-            </ul>   
         </>
     )
 }

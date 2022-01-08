@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import CharacterList from "../components/CharacterList";
 
 const QuizContainer = () => {
 
-    const [characters, setCharacters] = useState("")
+    const [characters, setCharacters] = useState([])
 
     useEffect(() => {
         getCharacters()
     }, [])
 
     const getCharacters = () => {
-        fetch("https://rickandmortyapi.com/api/character")
-            .then(res => res.json())
-            .then(char => setCharacters(char.results))
+        fetch("https://rickandmortyapi.com/api/character?page=1")
+        .then(res => res.json())
+        .then(char => setCharacters(char.results))
     }
 
     return (
